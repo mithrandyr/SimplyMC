@@ -1,0 +1,1 @@
+Having some fun using the [CmlLib.Core](https://github.com/AlphaBs/CmlLib.Core/) library for launching MineCraft.

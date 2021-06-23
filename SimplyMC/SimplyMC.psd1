@@ -12,7 +12,7 @@
 RootModule = 'SimplyMC.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.2'
+ModuleVersion = '0.0.3'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -27,7 +27,7 @@ Author = 'Mithrandy'
 CompanyName = 'Unknown'
 
 # Copyright statement for this module
-Copyright = '2020'
+Copyright = '2021'
 
 # Description of the functionality provided by this module
 Description = 'Minecraft Launcher via PowerShell'

@@ -47,7 +47,7 @@ function Start-MineCraft {
     $session = [CmlLib.Core.Auth.MSession]::GetOfflineSession($Name)
     $launcher = [CmlLib.Core.CMLauncher]::new([CmlLib.Core.MinecraftPath]::new())
     $launchOption = [CmlLib.Core.MLaunchOption]@{Session = $session}
-    $launcher.CreateProcess("1.16.3", $launchOption).Start() | Out-Null
+    $launcher.CreateProcess("$version", $launchOption).Start() | Out-Null
     
     Write-Host "MineCraft may take a few seconds to launch, please be patient..."
     Write-Host

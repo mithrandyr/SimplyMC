@@ -1,6 +1,6 @@
 function Start-MineCraft {
     [cmdletBinding(DefaultParameterSetName="default")]
-    param([string]$Name, [string]$Version, [switch]$Persist)
+    param([string]$Name, [string]$Version, [switch]$NoPersist)
     $ErrorActionPreference = "Stop"
 
     $profile = LoadProfile
@@ -17,10 +17,7 @@ function Start-MineCraft {
             Write-Host
         }
     }
-    elseif($Persist) {
-        $profile.Name = $Name
-        SaveProfile -Profile $profile
-    }
+    else { $profile.Name = $Name }
     
     if(-not $Version) {
         if(-not $profile.Version) {
@@ -38,10 +35,9 @@ function Start-MineCraft {
             Write-Host
         }
     }
-    elseif($Persist) {
-        $profile.Version = $Version
-        SaveProfile -Profile $profile
-    }
+    else { $profile.Version = $Version }
+
+    if(-not $NoPersist) { SaveProfile -Profile $profile }
 
     #launch minecraft
     $session = [CmlLib.Core.Auth.MSession]::GetOfflineSession($Name)
